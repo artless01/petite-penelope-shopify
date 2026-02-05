@@ -1,0 +1,122 @@
+{
+	"sections": {
+		"main": {
+			"type": "main-article",
+			"settings": {
+				"show_image": true,
+				"show_author": false,
+				"show_date": true,
+				"show_excerpt": true,
+				"show_tags": true,
+				"show_comments": true,
+				"show_social": true,
+				"desktop_height": "height-large",
+				"color_scheme": "",
+				"top_space_desktop": 70,
+				"bottom_space_desktop": 70,
+				"top_space_mobile": 40,
+				"bottom_space_mobile": 40
+			}
+		},
+		"featured_blog_gHQEWc": {
+			"type": "featured-blog",
+			"settings": {
+				"heading": "Recent Blogs",
+				"heading_size": "h2",
+				"heading_size_mobile": "h3_mobile",
+				"heading_alignment": "left",
+				"blog": "news",
+				"post_limit": 3,
+				"show_date": true,
+				"show_author": false,
+				"show_excerpt": true,
+				"btn_text": "View all",
+				"btn_link": "",
+				"btn_size": "medium",
+				"color_scheme": "",
+				"top_space_desktop": 0,
+				"bottom_space_desktop": 80,
+				"top_space_mobile": 40,
+				"bottom_space_mobile": 40
+			}
+		},
+		"logo_list_gmGiTt": {
+			"type": "logo-list",
+			"blocks": {
+				"logo_Bjwt3Y": {
+					"type": "logo",
+					"settings": {
+						"image": "shopify:\/\/shop_images\/Paris_687cfdb1-26dc-44cf-baa2-009d685f6c87.svg",
+						"image_link": "",
+						"image_width": 50
+					}
+				},
+				"logo_jPfeFM": {
+					"type": "logo",
+					"settings": {
+						"image": "shopify:\/\/shop_images\/Desire-1.svg",
+						"image_link": "",
+						"image_width": 50
+					}
+				},
+				"logo_KwKEcf": {
+					"type": "logo",
+					"settings": {
+						"image": "shopify:\/\/shop_images\/Paris_687cfdb1-26dc-44cf-baa2-009d685f6c87.svg",
+						"image_link": "",
+						"image_width": 50
+					}
+				},
+				"logo_4aVzHm": {
+					"type": "logo",
+					"settings": {
+						"image": "shopify:\/\/shop_images\/Desire-1.svg",
+						"image_link": "",
+						"image_width": 50
+					}
+				},
+				"logo_VaeF9P": {
+					"type": "logo",
+					"settings": {
+						"image": "shopify:\/\/shop_images\/Paris_687cfdb1-26dc-44cf-baa2-009d685f6c87.svg",
+						"image_link": "",
+						"image_width": 50
+					}
+				}
+			},
+			"block_order": [
+				"logo_Bjwt3Y",
+				"logo_jPfeFM",
+				"logo_KwKEcf",
+				"logo_4aVzHm",
+				"logo_VaeF9P"
+			],
+			"settings": {
+				"images_height": false,
+				"swipe_enable_mobile": true,
+				"show_card_background": true,
+				"show_card_border": false,
+				"layout_type": "marquee",
+				"scrolling_speed": 58,
+				"direction": "ltr",
+				"column_spacing": 30,
+				"heading": "",
+				"heading_size": "h2",
+				"heading_size_mobile": "h3_mobile",
+				"heading_alignment": "left",
+				"color_scheme": "tertiary",
+				"background": "rgba(0,0,0,0)",
+				"border": "rgba(0,0,0,0)",
+				"top_space_desktop": 0,
+				"bottom_space_desktop": 0,
+				"top_space_mobile": 0,
+				"bottom_space_mobile": 0
+			}
+		}
+	},
+	"order": [
+		"main",
+		"featured_blog_gHQEWc",
+		"logo_list_gmGiTt"
+	]
+}

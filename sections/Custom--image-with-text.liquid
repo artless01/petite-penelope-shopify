@@ -1,0 +1,238 @@
+<div class="Custom--image-with-text" style="background-color: {{ section.settings.bg_color }};">
+
+    <div class="container">
+
+        <div class="custom--image-inner">
+
+            <div class="image--side">
+
+                <img src="{{ section.settings.image | img_url: 'master' }}">
+
+            </div>
+            <div class="text--side">
+                <span class="sec--title">{{ section.settings.title }}</span>
+                <p>{{ section.settings.content }}</p>
+                
+            </div>
+            <div class="bullet--points">
+
+                <ul>
+                    {% if section.settings.tickmark != blank%}
+                    <li><img src="{{ section.settings.tickmark-img | img_url: 'master' }}" />{{ section.settings.tickmark }}</li>
+                    {% endif %}
+                    {% if section.settings.tickmark1 != blank%}
+                    <li><img src="{{ section.settings.tickmark-img1 | img_url: 'master' }}" />{{ section.settings.tickmark1 }}</li>
+                    {% endif %}
+                    {% if section.settings.tickmark2 != blank%}
+                    <li><img src="{{ section.settings.tickmark-img2 | img_url: 'master' }}" />{{ section.settings.tickmark2 }}</li>
+                    {% endif %}
+                    {% if section.settings.tickmark3 != blank%}
+                    <li><img src="{{ section.settings.tickmark-img3 | img_url: 'master' }}" />{{ section.settings.tickmark3 }}</li>
+                    {% endif %}
+                    {% if section.settings.tickmark4 != blank%}
+                    <li><img src="{{ section.settings.tickmark-img4 | img_url: 'master' }}" />{{ section.settings.tickmark4 }}</li>
+                    {% endif %}
+
+                </ul>
+
+            </div>
+        </div>   
+
+    </div>
+
+</div>
+<style>
+  #shopify-section-{{ section.id }} .Custom--image-with-text {
+     padding-top:{{ section.settings.top_space_desktop }}px;
+     padding-bottom:{{ section.settings.bottom_space_desktop }}px;
+   }
+
+   @media only screen and (max-width:767px) {
+     #shopify-section-{{ section.id }}.shopify-section .Custom--image-with-text{
+       padding-top:{{ section.settings.top_space_mobile }}px;
+       padding-bottom:{{ section.settings.bottom_space_mobile }}px;
+     }
+
+    }
+     .image--side img{width: 100%;}
+     .image--side { width: 20%;}
+     .custom--image-inner {display: flex;align-items: center;justify-content: space-between;}
+     .text--side p {font-size: 16px;color: #5C5B55;line-height: 24px;}
+     .text--side span.sec--title {font-size: 28px;color: #5C5B55;font-weight: 500;line-height: 48px;display: block;margin-bottom: 10px;}
+     .text--side {width: 40%;}
+     .bullet--points {width: 30%;}
+     .bullet--points ul li img {width: 100%;max-width: 25px;margin-top: -5px;margin-right: 15px;}
+     .bullet--points ul li {font-size: 30px;font-family: 'Jimmy Script';color: #5C5B55;list-style: none;display: flex;align-items: center;letter-spacing: 1px;}
+     @media only screen and (max-width: 800px) {
+.custom--image-inner {
+    flex-wrap: wrap;
+}
+.text--side {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.image--side, .text--side, .bullet--points {
+    width: 100%;
+}
+.image--side img {
+    width: 50%;
+}
+}
+   </style>
+{% schema %}
+{
+  "name": "Image With Text",
+  "tag": "section",
+  "class": "section-image-with--text",
+  "disabled_on": {
+  "groups": ["header", "footer","aside"]
+  },
+  "settings": [
+            {
+            "type": "color",
+            "id": "bg_color",
+            "label": "Background Color",
+            "default": "#FCFAF7"
+            },
+            {
+            
+                "type": "image_picker",
+                "id": "image",
+                "label": "Image" 
+
+            }, 
+            {
+            
+                "type": "text",
+                "id": "title",
+                "label": "Title" 
+
+            },
+            {
+            
+                "type": "richtext",
+                "id": "content",
+                "label": "Content" 
+
+            }, 
+            {
+            
+                "type": "image_picker",
+                "id": "tickmark-img",
+                "label": "Bullet Point Image" 
+
+            },          
+            {
+            
+                "type": "text",
+                "id": "tickmark",
+                "label": "Bullet Point" 
+
+            },
+                        {
+            
+                "type": "image_picker",
+                "id": "tickmark-img1",
+                "label": "Bullet Point Image" 
+
+            }, 
+             {
+            
+             "type": "text",
+                "id": "tickmark1",
+                "label": "Bullet Point" 
+
+            },
+                        {
+            
+                "type": "image_picker",
+                "id": "tickmark-img2",
+                "label": "Bullet Point Image" 
+
+            }, 
+             {
+
+            "type": "text",
+                "id": "tickmark2",
+                "label": "Bullet Point" 
+
+            },
+                        {
+            
+                "type": "image_picker",
+                "id": "tickmark-img3",
+                "label": "Bullet Point Image" 
+
+            }, 
+             {
+
+            "type": "text",
+                "id": "tickmark3",
+                "label": "Bullet Point" 
+
+            },
+                        {
+            
+                "type": "image_picker",
+                "id": "tickmark-img4",
+                "label": "Bullet Point Image" 
+
+            }, 
+             {
+
+            "type": "text",
+                "id": "tickmark4",
+                "label": "Bullet Point" 
+
+            },
+                {
+      "type": "header",
+      "content": "t:common.header.section_spacing.content"
+    },
+    {
+      "type": "range",
+      "id": "top_space_desktop",
+       "label": "t:common.section_spacing.top_space_desktop.label",
+      "default": 80,
+      "min": 0,
+      "max": 150,
+      "step": 5
+    },
+    {
+      "type": "range",
+      "id": "bottom_space_desktop",
+      "label": "t:common.section_spacing.bottom_space_desktop.label",
+      "default": 80,
+      "min": 0,
+      "max": 150,
+      "step": 5
+    },
+    {
+      "type": "range",
+      "id": "top_space_mobile",
+       "label": "t:common.section_spacing.top_space_mobile.label",
+      "default": 40,
+      "min": 0,
+      "max": 100,
+      "step": 5
+    },
+    {
+      "type": "range",
+      "id": "bottom_space_mobile",
+       "label": "t:common.section_spacing.bottom_space_mobile.label",
+      "default": 40,
+      "min": 0,
+      "max": 100,
+      "step": 5
+    }
+
+
+
+  ],
+  "presets": [
+    {
+      "name": "Image with textt",
+    }
+  ]
+}
+{% endschema %}

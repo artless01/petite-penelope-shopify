@@ -1,0 +1,340 @@
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css" />
+
+<div class="{{ section.settings.color_scheme }}-scheme spacing-box">
+  <div class="{{ settings.layout_width }} custom--container">
+    {% if section.settings.heading != blank %}
+      <div class="heading-header">
+        <h2 class="{{ section.settings.heading_size }} {{ section.settings.heading_size_mobile }} align-{{ section.settings.heading_alignment }}">
+          {{ section.settings.heading }}
+        </h2>
+      </div>
+    {% endif %}
+    <div class="category-list-grid  {% if section.settings.collections_column == 2 %}category-list-2{% else %}category-list-{{ section.settings.collections_column }}{% endif %}">
+        <div class="slider slider-for">
+      {% if section.blocks.size > 0 %}
+        {% for block in section.blocks %}
+          <div class="category-list-item">
+            {% render 'collection-grid',
+              collection: block.settings.collection,
+              image: block.settings.image,
+              title: block.settings.title,
+              section: section,
+              imageRatio: section.settings.image_size
+            %}
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script>
+<script type="text/javascript">
+		 $('.slider-for').slick({
+		   slidesToShow: 6,
+		   slidesToScroll: 1,
+       infinite: false,
+		   arrows: true,
+       responsive: [
+      {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: false,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        infinite: false,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 2,
+        infinite: false,
+        slidesToScroll: 1
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+		 });
+
+</script>
+<style>
+  #shopify-section-{{ section.id }} {
+     --topSpace:{{ section.settings.top_space_desktop }}px;
+     --bottomSpace:{{ section.settings.bottom_space_desktop }}px;
+   }
+
+   @media only screen and (max-width:767px) {
+     #shopify-section-{{ section.id }}.shopify-section{
+       --topSpace:{{ section.settings.top_space_mobile }}px;
+       --bottomSpace:{{ section.settings.bottom_space_mobile }}px;
+     }
+
+   }
+   .slick-slider {
+    margin-bottom: 0;
+}
+   .slick-next:before {
+    content: '\f105';
+        opacity: 1;
+        font-family: fontawesome;
+    color: #3D3D3D;
+    font-size: 23px;
+}
+   .slick-prev:before {
+    content: '\f104';
+        opacity: 1;
+        font-family: fontawesome;
+    color: #3D3D3D;
+    font-size: 23px;
+}
+button.slick-arrow {
+    box-shadow: 0px 3px 6px #00000029 !important;
+    background: #fff !important;
+    border-color: #fff !important;
+        transform: translateY(-110%);
+}
+.slick-next {
+    right: -5px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+button.slick-arrow.slick-disabled {
+   opacity: 0.2; 
+}
+.slick-prev {
+    z-index: 9;
+    left: -5px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+   .category-content {text-align: center;}
+   .category-list-grid{display: block;}
+   .category-content h6.category-list-title {font-size: 14px;line-height: 22px;}
+   .custom--image {border-radius: 50%;}
+   .custom--image img {border-radius: 50%;}
+  .container.custom--container {max-width: 100% !important;}
+</style>
+{% schema %}
+{
+  "name": "t:sections.collection_list.name",
+  "tag": "section",
+  "class": "section-image-links collection-list",
+  "disabled_on": {
+  "groups": ["header", "footer","aside"]
+  },
+  "settings": [
+    {
+      "type": "range",
+      "id": "collections_column",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 4,
+      "label": "t:sections.collection_list.settings.collections_column.label"
+    },
+    {
+      "type": "inline_richtext",
+      "label": "t:common.global.heading.label",
+      "id": "heading",
+      "default": "Collections list"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "default": "h3",
+       "label": "t:common.heading_size.desktop_label",
+      "options": [
+        {
+        "value": "h1",
+          "label": "t:common.heading_size.options.extra_large.label"
+        },
+        {
+          "value": "h2",
+          "label": "t:common.heading_size.options.large.label"
+        },
+        {
+          "value": "h3",
+          "label": "t:common.heading_size.options.medium.label"
+        },
+        {
+          "value": "h4",
+          "label": "t:common.heading_size.options.small.label"
+        },
+        {
+          "value": "h5",
+          "label": "t:common.heading_size.options.extra_small.label"
+        }
+      ]
+    },
+    {
+          "type": "select",
+          "id": "heading_size_mobile",
+          "default": "h3_mobile",
+          "label": "t:common.heading_size.mobile_label",
+          "options": [
+            {
+            "value": "h1_mobile",
+            "label": "t:common.heading_size.options.extra_large.label"
+            },
+            {
+              "value": "h2_mobile",
+              "label": "t:common.heading_size.options.large.label"
+            },
+            {
+              "value": "h3_mobile",
+              "label": "t:common.heading_size.options.medium.label"
+            },
+            {
+              "value": "h4_mobile",
+              "label": "t:common.heading_size.options.small.label"
+            },
+            {
+              "value": "h5_mobile",
+              "label": "t:common.heading_size.options.extra_small.label"
+            }
+          ]
+      },
+      {
+        "type": "text_alignment",
+        "id": "heading_alignment",
+        "label": "t:common.global.heading_alignment.label",
+        "default": "left"
+      },
+    {
+      "type": "select",
+      "id": "image_size",
+      "label": "t:common.image_size.label",
+      "default": "auto",
+      "options": [
+        {
+          "value": "auto",
+          "label": "t:common.image_size.options.auto.label"
+        },
+        {
+          "value": "landscape",
+          "label": "t:common.image_size.options.landscape.label"
+        },
+        {
+          "value": "portrait",
+          "label": "t:common.image_size.options.portrait.label"
+        },
+        {
+          "value": "square",
+          "label": "t:common.image_size.options.square.label"
+        }
+      ]
+    },
+    {
+    "type": "header",
+     "content": "t:common.header.colors.content"
+    },
+    {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "default": "primary",
+      "label": "t:common.global.color_scheme.label"
+    },
+    {
+      "type": "header",
+      "content": "t:common.header.section_spacing.content"
+    },
+    {
+      "type": "range",
+      "id": "top_space_desktop",
+       "label": "t:common.section_spacing.top_space_desktop.label",
+      "default": 80,
+      "min": 0,
+      "max": 150,
+      "step": 5
+    },
+    {
+      "type": "range",
+      "id": "bottom_space_desktop",
+      "label": "t:common.section_spacing.bottom_space_desktop.label",
+      "default": 80,
+      "min": 0,
+      "max": 150,
+      "step": 5
+    },
+    {
+      "type": "range",
+      "id": "top_space_mobile",
+       "label": "t:common.section_spacing.top_space_mobile.label",
+      "default": 40,
+      "min": 0,
+      "max": 100,
+      "step": 5
+    },
+    {
+      "type": "range",
+      "id": "bottom_space_mobile",
+       "label": "t:common.section_spacing.bottom_space_mobile.label",
+      "default": 40,
+      "min": 0,
+      "max": 100,
+      "step": 5
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "t:sections.collection_list.blocks.name",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "t:common.global.collection.label"
+        },
+        {
+
+        "type": "image_picker",
+        "id": "image",
+        "label": "Collection Image"
+
+        },
+        {
+
+        "type": "text",
+        "id": "title",
+        "label": "Collection Title"
+
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.collection_list.presets.name",
+      "blocks": [
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

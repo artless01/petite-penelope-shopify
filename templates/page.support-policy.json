@@ -1,0 +1,39 @@
+{
+	"sections": {
+		"banner": {
+			"type": "page-banner",
+			"settings": {
+				"banner_image": "shopify:\/\/shop_images\/col-7_32cb9a3e-fa02-4677-b952-507a7b75c588.jpg",
+				"banner_height_desktop": "small",
+				"banner_height_mobile": "small",
+				"heading": "",
+				"description": "Paris Desire Clothing Store",
+				"heading_size": "h2",
+				"heading_size_mobile": "h3_mobile",
+				"content_width": "medium",
+				"heading_alignment": "center",
+				"color_scheme": "tertiary",
+				"bg_color_opacity": "#000000",
+				"overlay_opacity": 50,
+				"top_space_desktop": 0,
+				"bottom_space_desktop": 0,
+				"top_space_mobile": 0,
+				"bottom_space_mobile": 0
+			}
+		},
+		"main-page": {
+			"type": "main-page",
+			"settings": {
+				"color_scheme": "",
+				"top_space_desktop": 80,
+				"bottom_space_desktop": 80,
+				"top_space_mobile": 40,
+				"bottom_space_mobile": 40
+			}
+		}
+	},
+	"order": [
+		"banner",
+		"main-page"
+	]
+}

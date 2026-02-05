@@ -1,0 +1,127 @@
+{
+	"sections": {
+		"banner": {
+			"type": "main-blog-banner",
+			"settings": {
+				"banner_image": "shopify:\/\/shop_images\/slider2s.jpg",
+				"banner_height_desktop": "medium",
+				"banner_height_mobile": "small",
+				"heading": "Style Diaries",
+				"description": "Your Daily Dose of Fashion Inspiration",
+				"heading_size": "h1",
+				"heading_size_mobile": "h1_mobile",
+				"content_width": "medium",
+				"heading_alignment": "center",
+				"color_scheme": "tertiary",
+				"bg_color_opacity": "#000000",
+				"overlay_opacity": 50,
+				"top_space_desktop": 0,
+				"bottom_space_desktop": 0,
+				"top_space_mobile": 0,
+				"bottom_space_mobile": 0
+			}
+		},
+		"main": {
+			"type": "main-blog",
+			"settings": {
+				"artical_per_page": 12,
+				"show_date": true,
+				"show_author": false,
+				"show_tags": true,
+				"show_excerpt": true,
+				"color_scheme": "quaternary",
+				"top_space_desktop": 70,
+				"bottom_space_desktop": 70,
+				"top_space_mobile": 40,
+				"bottom_space_mobile": 10
+			}
+		},
+		"logo_list_xjr7B4": {
+			"type": "logo-list",
+			"blocks": {
+				"logo_kYe7RC": {
+					"type": "logo",
+					"settings": {
+						"image": "shopify:\/\/shop_images\/Paris_687cfdb1-26dc-44cf-baa2-009d685f6c87.svg",
+						"image_link": "",
+						"image_width": 50
+					}
+				},
+				"logo_z3mrA3": {
+					"type": "logo",
+					"settings": {
+						"image": "shopify:\/\/shop_images\/Desire-1.svg",
+						"image_link": "",
+						"image_width": 50
+					}
+				},
+				"logo_hiQ6xF": {
+					"type": "logo",
+					"settings": {
+						"image": "shopify:\/\/shop_images\/Paris_687cfdb1-26dc-44cf-baa2-009d685f6c87.svg",
+						"image_link": "",
+						"image_width": 50
+					}
+				},
+				"logo_gVqEbr": {
+					"type": "logo",
+					"settings": {
+						"image": "shopify:\/\/shop_images\/Desire-1.svg",
+						"image_link": "",
+						"image_width": 50
+					}
+				},
+				"logo_XzKtf9": {
+					"type": "logo",
+					"settings": {
+						"image": "shopify:\/\/shop_images\/Paris_687cfdb1-26dc-44cf-baa2-009d685f6c87.svg",
+						"image_link": "",
+						"image_width": 50
+					}
+				},
+				"logo_9dKyCM": {
+					"type": "logo",
+					"settings": {
+						"image": "shopify:\/\/shop_images\/Desire-1.svg",
+						"image_link": "",
+						"image_width": 50
+					}
+				}
+			},
+			"block_order": [
+				"logo_kYe7RC",
+				"logo_z3mrA3",
+				"logo_hiQ6xF",
+				"logo_gVqEbr",
+				"logo_XzKtf9",
+				"logo_9dKyCM"
+			],
+			"settings": {
+				"images_height": false,
+				"swipe_enable_mobile": true,
+				"show_card_background": true,
+				"show_card_border": false,
+				"layout_type": "marquee",
+				"scrolling_speed": 58,
+				"direction": "ltr",
+				"column_spacing": 52,
+				"heading": "",
+				"heading_size": "h2",
+				"heading_size_mobile": "h3_mobile",
+				"heading_alignment": "left",
+				"color_scheme": "tertiary",
+				"background": "rgba(0,0,0,0)",
+				"border": "rgba(0,0,0,0)",
+				"top_space_desktop": 0,
+				"bottom_space_desktop": 0,
+				"top_space_mobile": 0,
+				"bottom_space_mobile": 0
+			}
+		}
+	},
+	"order": [
+		"banner",
+		"main",
+		"logo_list_xjr7B4"
+	]
+}

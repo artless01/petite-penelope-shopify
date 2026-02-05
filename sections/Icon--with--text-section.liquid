@@ -1,0 +1,67 @@
+<div class="icon--text-with--text-main">
+    <div class="icon--text-with--text-inner">
+{%- for block in section.blocks -%}
+    {% if block.type == 'column' %}
+    <div class="icon--block">
+
+        <img src="{{ block.settings.image_icon | img_url: 'master' }}">
+
+        <div class="contnet--sec">
+
+            <span style="color:{{ block.settings.heading--color }};">{{ block.settings.heading }}</span>
+            <p>{{ block.settings.description }}</p>
+        </div>
+
+    </div>
+{% endif %}
+    {%- endfor -%}
+</div>
+</div>
+
+{% schema %}
+{
+  "name": "icon With Text",
+  "tag": "section",
+  "class": "Icon Block",
+  "max_blocks": 3,
+  "settings": [],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "t:sections.text-with-icon.blocks.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_icon",
+          "label": "t:sections.text-with-icon.blocks.settings.image_icon.label"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Add Heading here",
+          "label": "t:common.global.heading.label"
+        },
+        {
+            "type": "color",
+            "id": "heading--color",
+            "label": "Heading Color",
+            "default": "#000000",
+            "info": "Choose a color for this heading."
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "default": "Add text here",
+          "label": "t:common.global.description.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "icon With Text custom",
+      "blocks": [ ]
+    }
+  ]
+}
+{% endschema %}
