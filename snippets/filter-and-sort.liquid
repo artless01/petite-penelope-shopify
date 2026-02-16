@@ -232,7 +232,7 @@
                           {%- case filter.type -%}
                             {%- when 'boolean', 'list' -%}
                               {% assign indexVale = 1 %}
-                              <ul class="{% if colorName contains filterName %}product-swatch-list large {% else %}no-bullet{% endif %}">
+                              <ul class="{% if colorName contains filterName %}product-swatch-list large {% else %}no-bullet custm-filt{% endif %}">
                                 {%- for value in filter.values limit: limitFilter -%}
                                   <li class="{% if colorName contains filterName %}color-swatch product-swatch-item{% else %}filter-tab-item{% endif %}{% if value.active and  colorName contains filterName %} selected{% endif %} {% if value.count == 0 and value.active == false %}disabled{% endif %}">
                                     <input

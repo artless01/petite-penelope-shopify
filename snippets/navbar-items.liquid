@@ -45,7 +45,6 @@
                     <div class="megamenus-main">
                       <div class="megamenus-inner">
                         {% for childlink in link.links %}
-                          {% unless childlink.title == 'Shop by Age' or childlink.title == 'Shop By' %}
                           <div class="megamenu-item">
                             <a
                               href="{{ childlink.url }}"
@@ -58,8 +57,6 @@
                               </span>
                             </a>
                             {% if childlink.links.size > 0 %}
-                              {% assign grandchildren_sorted = childlink.links | map: 'title' | sort %}
-                              {{ grandchildren_sorted }}
                               <ul class="no-bullet">
                                 {% for grandchild in childlink.links %}
                                   <li class="" role="none">
@@ -78,15 +75,13 @@
                               </ul>
                             {% endif %}
                           </div>
-                          {% endunless %}
                         {% endfor %}
 
-                         {% if megaMenuData != blank %}
-                          <div class="cards-wrapper">
-                            {{ megaMenuData }}
-                          </div>
-                         {% endif %} 
-                    
+                        {% liquid
+                          if megaMenuData != blank
+                            echo megaMenuData
+                          endif
+                        %}
                       </div>
                       {% if megaMenuData != blank %}
                         {% for block in megaMenuBlocks %}

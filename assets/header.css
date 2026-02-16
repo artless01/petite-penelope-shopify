@@ -509,13 +509,6 @@ body:not(.side-drawer-body-open, .no-scroll)
   text-align: left;
 }
 
-.cards-wrapper {
-  grid-column: 3 / -1;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 16px;
-}
-
 .megamenu-item ul li {
   padding: 2px 0;
 }

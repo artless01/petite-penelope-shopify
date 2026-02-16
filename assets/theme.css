@@ -3350,7 +3350,7 @@ sidebar-filter {
 }
 
 .side-filter-content ul + ul {
-  margin-top: 14px;
+  margin-top: 0px;
 }
 
 show-more-button {

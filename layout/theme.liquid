@@ -35,7 +35,7 @@
       }
     </script>
   </head>
-  <body id="{{ page.handle }}" class="{% if template == 'cart' %}template-cart{% endif %} main-wrapper {{ template.name }}">
+  <body id="{{ page.handle }}" class="{% if template == 'cart' %}template-cart{% endif %} main-wrapper {{ template.name }} {% if template contains 'collection' and collection.products_count < 4 %}few-products {% endif %}">
     <a class="btn unstyled-link skip-to-content-link  focus-inside" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>
@@ -68,7 +68,7 @@
         <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>
       {%- endif -%}
       <script>
-        window.addEventListener('scroll', function() {
+        {% comment %} window.addEventListener('scroll', function() {
           const header = document.querySelector('body.main-wrapper.collection');
           const scrollPosition = window.innerHeight + window.scrollY;
           const threshold = document.body.offsetHeight - 350; // 10px buffer for accuracy
@@ -84,7 +84,7 @@
           if (scrollPosition >= threshold) {
             header.classList.remove('is-scrolled');
           }
-        });
+        }); {% endcomment %}
 
         // 1. Get references to the elements
         const toggleButton = document.getElementByClass('show-more-button');
@@ -102,5 +102,14 @@
         .collapse-box[aria-expanded="false"] ul.no-bullet.custm-filt{display: none;}
 
       </style>
+      <script>
+        let parent = document.querySelector('.sidebar__form').parentElement;
+        while (parent) {
+          const hasOverflow = getComputedStyle(parent).overflow !== 'visible';
+          if (hasOverflow) console.log('Found it!', parent);
+          parent = parent.parentElement;
+        }
+    </script>
+
   </body>
 </html>

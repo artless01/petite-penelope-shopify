@@ -10,7 +10,6 @@
     or block.settings[imageOption] != blank
     or block.settings[descriptionOption] != blank
   -%}
-    {% comment %} {% if  %} {% endcomment %}
     <div class="megamenu-item">
       <{% if block.settings[linkOption] != blank  %}a href="{{ block.settings[linkOption] }}"{% else %}div{% endif%} class="megamenu-promotion-box">
         {%- if block.settings[imageOption] != blank -%}

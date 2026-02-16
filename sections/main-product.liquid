@@ -14,7 +14,11 @@
           {% render 'product-info', product: product, section: section, product_variant: product_variant %}
         </div>
       </div>
+      <div class="mobile--height"></div>
     </div>
+  </div>
+ <div class="sticky--addtocart">
+ {% render 'product-info-2', product: product, section: section, product_variant: product_variant %}
   </div>
 </div>
 {% if product.media.size > 0 %}
@@ -33,7 +37,61 @@
     assign seo_media = product.featured_media
   endif
 -%}
+       {% comment %}
+        window.addEventListener('scroll', function() {
+          const header = document.querySelector('body.main-wrapper.product');
+          const scrollPosition = window.innerHeight + window.scrollY;
+          const threshold = document.body.offsetHeight - 350; // 10px buffer for accuracy
 
+          // 1. Logic for adding class on scroll
+          if (window.scrollY > 1000) {
+            header.classList.add('is-scrolled');
+          } else {
+            header.classList.remove('is-scrolled');
+          }
+
+          // 2. Logic to remove class when at the bottom
+          if (scrollPosition >= threshold) {
+            header.classList.remove('is-scrolled');
+          }
+        }); 
+
+
+{% endcomment %}
+
+<script>
+
+
+          window.addEventListener('scroll', function() {
+            const header = document.querySelector('body.main-wrapper.product');
+            const scrollPosition = window.innerHeight + window.scrollY;
+            
+            // Check if the screen width is less than 768px (standard mobile breakpoint)
+            const isMobile = window.innerWidth < 768;
+            
+            // Set 400px for mobile, 1000px for desktop
+            const scrollTrigger = isMobile ? 1300 : 1300; 
+            
+            // Set 600px bottom buffer for mobile, 350px for desktop (adjust as needed)
+          const bottomBuffer = isMobile ? 600 : 350;
+          const threshold = document.body.offsetHeight - bottomBuffer;
+                
+
+            // 1. Logic for adding class on scroll
+            if (window.scrollY > scrollTrigger) {
+              header.classList.add('is-scrolled');
+            } else {
+              header.classList.remove('is-scrolled');
+            }
+            // 2. Logic to remove class when at the bottom
+            if (scrollPosition >= threshold) {
+              header.classList.remove('is-scrolled');
+            }
+            
+          });
+
+
+      </script>
 <script type="application/ld+json">
   {
     "@context": "http://schema.org/",
