@@ -14,7 +14,7 @@
     <nav id="mobile-nav-menu" class="drawer-mobile-menu" data-mobile-menu>
       <div class="drawer-mobile-box">
         <ul class="no-bullet mobile-nav">
-          {%- for link in linklists[section.settings.menu].links -%}
+          {%- for link in linklists['mobile-menu'].links -%}
             {%- liquid
               assign mobileMegamenu = section.blocks | where: 'type', 'mega_menu'
               assign linkTitle = link.title | handleize
